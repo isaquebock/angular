@@ -1,0 +1,126 @@
+<section class="property-binding">
+  <!--<article>
+    <h2>Interpolation/Interpolação</h2>
+    <p>String renderizada: {{ url }}</p>
+    <p>Resultado de 1 + 1: {{ 1 + 1 }}</p>
+    <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValue() }}</p>
+    <p>Expressão boleana: {{ booleanValue && getCourseLike() }}</p>
+  </article>
+
+  <article>
+    <h2>Property Binding</h2>
+    <img [src]="urlImage">
+    <img bind-src="urlImage">
+  </article>
+
+  <article>
+    <h2>Class e Style binding</h2>
+    <div>
+      Selecione uma classe:
+    </div>
+
+    <select #classe (change)="0">
+      <option value="alert-success">Sucesso</option>
+      <option value="alert-warning">Alerta</option>
+      <option value="alert-danger">Erro</option>
+    </select>
+
+    <br><br>
+
+    <div class="alert {{ classe.value }}" role="alert">
+        Texto teste
+    </div>
+
+    <div class="alert" role="alert"
+      [class.alert-success]="classe.value == 'alert-success'"
+      [style.display]="classe.value == 'alert-success' ? 'block' : 'none'"
+      [style.border]="classe.value == 'alert-success' ? '2px solid black' : 'none'"
+    >
+      This is a primary alert—check it out!
+    </div>
+    <div class="alert" role="alert"
+      [class.alert-warning]="classe.value == 'alert-warning'"
+      [style.display]="classe.value == 'alert-warning' ? 'block' : 'none'"
+    >
+      This is a secondary alert—check it out!
+    </div>
+    <div class="alert" role="alert"
+      [class.alert-danger]="classe.value == 'alert-danger'"
+      [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'"
+    >
+      This is a success alert—check it out!
+    </div>
+
+  </article>
+
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button
+        (click)="buttonEvent()"
+        class="btn btn-primary"
+      >Me clique!</button>
+
+      <br><br>
+
+      <input
+        #campoNome
+        type="text"
+        name="name"
+        id=""
+        value=""
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="saveValue(campoNome.value)"
+        (blur)="saveValue(campoNome.value)"
+      >
+
+      <p>Valor digitado: {{ currentValue }}</p>
+      <p>Valor Salvo: {{ savedValue }}</p>
+
+      <br><br>
+
+      <span
+        (mouseover)="mouseOver()"
+        (mouseout)="mouseOut()"
+        [class]="isMouseOver ? 'hovered' : 'no-hovered'"
+      >Passe o mouse por cima de mim!</span>
+    </div>
+  </article>
+
+
+  <article>
+    <h2>Two-way data binding</h2>
+
+    <div>
+      <input
+        type="text"
+        [value]="name"
+        (input)="name=getInputValue($event)"
+      />
+
+      <input
+      type="text"
+      [ngModel]="name"
+      (ngModelChange)="name=$event"
+      />
+
+      <input
+      type="text"
+      [(ngModel)]="name"
+      />
+
+      <p>Vcoê digitou o nome: {{ name }}</p>
+    </div>
+  </article>-->
+
+
+  <article>
+    <h2>Input/Output properties</h2>
+
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+    <contador
+      [valor]="10"
+      (mudouValor)="onMudouValor($event)"
+    ></contador>
+  </article>
+</section>
