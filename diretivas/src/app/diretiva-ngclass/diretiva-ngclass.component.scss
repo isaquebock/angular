@@ -1,0 +1,13 @@
+div {
+  width: 50px;
+  border: 2px solid blueviolet;
+  height: 50px;
+
+  &.filled {
+    background: purple;
+
+    &.-blue {
+      background: blue;
+    }
+  }
+}

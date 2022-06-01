@@ -1,0 +1,29 @@
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container nav navbar-nav">
+    <a
+    class="nav-item nav-link"
+    [class.active]="aba === 'Home'"
+    (click)="aba = 'Home'">
+      Home
+    </a>
+    <a
+    class="nav-item nav-link"
+    [class.active]="aba === 'Blog'"
+    (click)="aba = 'Blog'">
+      Blog
+    </a>
+    <a
+    class="nav-item nav-link"
+    [class.active]="aba === 'Sobre'"
+    (click)="aba = 'Sobre'">
+      Sobre
+    </a>
+  </div>
+</div>
+
+
+<div class="Container" [ngSwitch]="aba">
+  <p *ngSwitchDefault="'Home'">Conteúdo da Home</p>
+  <p *ngSwitchCase="'Blog'">Conteúdo do Blog</p>
+  <p *ngSwitchCase="'Sobre'">Conteúdo do Sobre</p>
+</div>
