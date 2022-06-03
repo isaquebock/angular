@@ -4,7 +4,6 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
   selector: '[ngElse]'
 })
 export class NgElseDirective {
-
   @Input() set ngElse(expression: boolean) {
     if(!expression) {
       this._viewContainerRef.createEmbeddedView(this._templateRef)
@@ -17,5 +16,4 @@ export class NgElseDirective {
     private _templateRef: TemplateRef<any>,
     private _viewContainerRef: ViewContainerRef
   ) { }
-
 }
