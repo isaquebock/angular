@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: coral;
+
+  > .logo, > .menu, > span {
+    flex: 1;
+    color: white;
+  }
+
+  > .logo {
+    letter-spacing: 5px;
+  }
+
+  > .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > .menu-item > a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+
+    > .menu-item {
+      &.active {
+        border: 1px solid white;
+      }
+    }
+  }
+}
+
+.id-selector {
+  margin: 16px 5%;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    text-transform: lowercase;
+  }
+
+  input {
+    width: 67.5%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 16px;
+    outline: none;
+  }
+  button {
+    width: 27.5%;
+    background: crimson;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
