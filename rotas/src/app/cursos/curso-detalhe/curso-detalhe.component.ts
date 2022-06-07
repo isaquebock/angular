@@ -31,7 +31,7 @@ export class CursoDetalheComponent implements OnInit {
     console.log(this.curso)
 
     if(this.curso == null) {
-      this.router.navigate(['/404', ])
+      this.router.navigate(['cursos/404', ])
     }
   }
 

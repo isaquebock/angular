@@ -11,17 +11,19 @@ import { CursosService } from './cursos.service';
 
 // Modules
 import { CursosRoutingModule } from './cursos.routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     CursoDetalheComponent,
     CursoNaoEncontradoComponent,
-    CursosComponent
+    CursosComponent,
   ],
   imports: [
     CommonModule,
-    CursosRoutingModule
+    CursosRoutingModule,
+    FormsModule
   ],
   providers: [
     CursosService

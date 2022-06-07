@@ -1,1 +1,23 @@
-<p>login works!</p>
+<h3>Login</h3>
+
+<div class="row">
+  <div class="input-field">
+    <label for="firstName">Usuário</label>
+    <input type="text" id="firstName" [(ngModel)]="usuario.nome">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field">
+    <label for="password">Senha</label>
+    <input type="password" id="password" [(ngModel)]="usuario.senha">
+  </div>
+</div>
+
+
+<button (click)="fazerLogin()">
+  Fazer login
+</button>
+
+{{ error_message }}

@@ -5,10 +5,16 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
+
 export class NavbarComponent implements OnInit {
 
   id: any = '0';
-  menuItens: any[] = [{ title: 'Home', link: '' }, { title: 'Cursos', link: '/cursos' }, { title: 'Login', link: '/login' }]
+  menuItens: any[] = [
+    { title: 'Home', link: '' },
+    { title: 'Cursos', link: '/cursos' },
+    { title: 'Login', link: '/login' },
+    { title: 'Alunos', link: '/alunos' }
+  ]
   test: string = ''
 
   adicionaId(value: any) {

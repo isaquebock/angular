@@ -1,0 +1,16 @@
+.row {
+  .input-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    input {
+      flex: 3;
+    }
+
+    label {
+      flex: 1;
+    }
+  }
+}

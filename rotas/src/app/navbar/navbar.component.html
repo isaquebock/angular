@@ -4,24 +4,27 @@
     <li
       class="menu-item"
       *ngFor="let menu of menuItens"
-
     >
       <a routerLink="{{ menu.link }}">
         {{ menu.title | uppercase }}
       </a>
     </li>
 
+    <!---
     <li class="menu-item" >
       <a [routerLink]="['curso', id]">
         CURSO COM ID
       </a>
     </li>
+    -->
   </ul>
   <span></span>
-</header> 
+</header>
 
+<!---
 <div class="id-selector">
   <h2>Entre com o número do ID do curso: {{ id }}</h2>
   <input type="text" #idCurso [(ngModel)]="id">
   <button (click)="adicionaId(idCurso.value)">Adiciona ID</button>
 </div>
+-->
