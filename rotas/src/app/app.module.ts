@@ -16,6 +16,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './login/auth.service';
+import { AuthGuard } from './guards/auth-guard';
+import { CursosGuard } from './guards/cursos-guard';
+import { AlunosGuard } from './guards/alunos-guard';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { AuthService } from './login/auth.service';
     HomeComponent,
     LoginComponent,
     NavbarComponent,
+    PaginaNaoEncontradaComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,10 @@ import { AuthService } from './login/auth.service';
   ],
   providers: [
     CursosService,
-    AuthService
+    AuthService,
+    AuthGuard,
+    CursosGuard
+
   ],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AlunosService } from '../alunos.service';
+import { Aluno } from '../model/alunos';
 
 @Component({
   selector: 'app-aluno-detalhe',
@@ -23,18 +24,20 @@ export class AlunoDetalheComponent implements OnInit {
   public aluno: any
 
   public editarContato() {
-    console.log('test')
     this.router.navigate(['/alunos', this.aluno.id, 'editar'])
   }
+
+
 
   ngOnInit(): void {
     this.alunos = this.cursosService.getAlunos()
 
-    this.sub = this.currentRoute.params.subscribe((params: any) => {
-      this.id = params['id']
-      this.aluno = this.alunos[--this.id];
-      console.log(this.id, this.aluno)
-    })
+    this.sub = this.currentRoute.data.subscribe(
+      info => {
+        this.aluno = info['aluno']
+        console.log(this.aluno)
+      }
+    )
 
   }
 
