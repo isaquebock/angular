@@ -1,0 +1,164 @@
+<form action="" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="row">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input
+        [ngClass]="{'is-invalid': !nome.valid && nome.touched}"
+        #nome="ngModel"
+        type="text"
+        class="form-control"
+        required
+        id="nome"
+        name="nome"
+        placeholder="Nome"
+        [(ngModel)]="user.nome"
+      >
+      <app-campo-control-erro [campo]="'Nome'" [mostraErro]="!nome.valid && nome.touched"></app-campo-control-erro>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="email" required>E-mail:</label>
+      <input
+        #email="ngModel"
+        [ngClass]="{'is-invalid': !email.valid && email.touched}"
+        type="email"
+        class="form-control"
+        email required
+        id="email"
+        name="email"
+        placeholder="email@email.com"
+        [(ngModel)]="user.email"
+      >
+      <app-campo-control-erro [campo]="'E-mail'" [mostraErro]="!email.valid && email.touched"></app-campo-control-erro>
+    </div>
+  </div>
+  <div ngModelGroup="endereco">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="cep" required>CEP:</label>
+          <input
+            #cep="ngModel"
+            [ngClass]="{'is-invalid': !cep.valid && cep.touched}"
+            type="text"
+            class="form-control"
+            required
+            id="cep"
+            name="cep"
+            placeholder="94000000"
+            [(ngModel)]="user.endereco.cep"
+            value=""
+            (blur)="consultaCep($event, f)"
+          >
+          <app-campo-control-erro campo="CEP" [mostraErro]="!cep.valid && cep.touched"></app-campo-control-erro>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="numero" required>Número:</label>
+          <input
+            #numero="ngModel"
+            [ngClass]="{'is-invalid': !numero.valid && numero.touched}"
+            type="text"
+            class="form-control"
+            required
+            id="numero"
+            name="numero"
+            placeholder="123"
+            [(ngModel)]="user.endereco.numero"
+          >
+          <app-campo-control-erro [campo]="'Número'" [mostraErro]="!numero.valid && numero.touched"></app-campo-control-erro>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="form-group">
+          <label for="complemento" required>Complemento:</label>
+          <input
+            #complemento="ngModel"
+            [ngClass]="{'is-invalid': !complemento.valid && complemento.touched}"
+            type="text"
+            class="form-control"
+            id="complemento"
+            name="complemento"
+            placeholder="Casa azul"
+            [(ngModel)]="user.endereco.complemento"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="rua" >Rua:</label>
+        <input
+          #rua="ngModel"
+          [ngClass]="{'is-invalid': !rua.valid && rua.touched}"
+          type="rua"
+          class="form-control"
+          id="rua"
+          name="rua"
+          readonly
+          placeholder="Rua Tiradentes"
+          [(ngModel)]="user.endereco.rua"
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <div class="form-group">
+          <label for="bairro" required>Bairro:</label>
+          <input
+            #bairro="ngModel"
+            [ngClass]="{'is-invalid': !bairro.valid && bairro.touched}"
+            type="text"
+            class="form-control"
+            readonly
+            id="bairro"
+            name="bairro"
+            placeholder="Bom Sucesso"
+            [(ngModel)]="user.endereco.bairro"
+          >
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="cidade" required>Cidade:</label>
+          <input
+            #cidade="ngModel"
+            [ngClass]="{'is-invalid': !cidade.valid && cidade.touched}"
+            type="text"
+            class="form-control"
+            id="cidade"
+            readonly
+            name="cidade"
+            placeholder="Porto Alegre"
+            [(ngModel)]="user.endereco.cidade"
+          >
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="estado" required>Estado:</label>
+          <input
+            #estado="ngModel"
+            [ngClass]="{'is-invalid': !estado.valid && estado.touched}"
+            type="text"
+            class="form-control"
+            id="estado"
+            readonly
+            name="estado"
+            placeholder="Rio Grande do Sul"
+            [(ngModel)]="user.endereco.estado"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-dark w-100"
+    [disabled]="!nome.valid || !email.valid"
+  >Submit</button>
+</form>
+
+<app-form-debug [form]="f"></app-form-debug>

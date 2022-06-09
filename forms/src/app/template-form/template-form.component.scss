@@ -1,0 +1,11 @@
+.form-group {
+  margin: 16px 0;
+
+  .form-control {
+    margin: 6px 0;
+
+    &.ng-touched.ng-invalid {
+      //border: 2px solid red;
+    }
+  }
+}
